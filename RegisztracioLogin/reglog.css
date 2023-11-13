@@ -52,7 +52,7 @@ button {
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
-    padding: 12px 45px;
+    padding: 12px 25px;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
@@ -161,9 +161,8 @@ input {
 }
 
 .overlay {
-    background: #83c5ac;
-    background: -webkit-linear-gradient(to right, #6ea48f, #83c5ac);
-    background: linear-gradient(to right, #6ea48f, #83c5ac);
+    background-image: url("pictures/hatter2.jpg");
+    opacity: 0.8;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
