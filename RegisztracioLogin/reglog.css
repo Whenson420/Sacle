@@ -68,7 +68,8 @@ button:focus {
 
 button.ghost {
     background-color: transparent;
-    border-color: #FFFFFF;
+    border-color: #008652;
+    color: rgb(142, 255, 206);
 }
 
 form {
@@ -249,4 +250,77 @@ footer i {
 footer a {
     color: #3c97bf;
     text-decoration: none;
+}
+.input_box {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+}
+.input_box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+}
+.input_box input:focus {
+    border-color: #00a66d;
+}
+.input_box i {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+}
+.input_box i.email,
+.input_box i.password {
+    left: 0;
+}
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password {
+    color: #8effce;
+}
+.input_box i.pw_hide {
+    right: 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+.option_field {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form_container a {
+    color: #008652;
+    font-size: 12px;
+}
+.form_container a:hover {
+    text-decoration: underline;
+}
+.checkbox {
+    display: flex;
+    column-gap: 8px;
+    white-space: nowrap;
+}
+.checkbox input {
+    accent-color: #8effce;
+}
+.checkbox label {
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: #0b0217;
+}
+.header {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    padding: 0 20px;
 }
