@@ -28,3 +28,5 @@ pwShowHide.forEach((icon) => {
         }
     });
 });
+document.getElementById("redirectButton").addEventListener("click", redirect);
+function redirect(){ window.location.href = "../KezdoOldal/kezdo.html"; }
