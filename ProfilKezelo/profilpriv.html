@@ -11,7 +11,7 @@
 </head>
 <body class="flex">
 <div class="flex flex-col items-center w-56 min-h-screen overflow-hidden text-gray-400 bg-gray-900 rounded">
-    <a class="flex items-center justify-center w-full px-3 mt-3" href="KezdoOldal/index.html">
+    <a class="flex items-center justify-center w-full px-3 mt-3" href="#">
         <svg class="h-8 w-8 text-red-600"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"/>
             <path d="M18 15a6 6 0 1 1 -10.853 -3.529c1.926-2.338 4.763-3.327 3.848-8.47 2.355 1.761 5.84 5.38 2.022 9.406-1.136 1.091-.244 2.767 1.221 2.593.882-.105 2.023-.966 3.23-2.3.532.68.532 1.717.532 2.3z" />
@@ -55,15 +55,12 @@
 
 
     <div class="row">
-        <div class="col-xl-4" style="text-align: center">
+        <div class="col-xl-4" >
             <div class="card mb-4 mb-xl-0 " >
 
-                <div class="card-body text-left" style="display: flex;align-items: center;justify-content: center ">
+                <div class="card-body ">
                     <img class="img-account-profile rounded-circle mb-4" src="pictures/profil.png" alt="" style="width: 25%; height: 25%;">
-                    <div class="mb-3 " style="font-size: 20px;padding-left: 20px ; ">
-                       <label class="small mb-1" for="inputUsername" style="">Felhasználónév:</label>
-                        <input class="form-control" id="inputUsername" type="text" size="30" placeholder="Add meg a felhasználó neved" Value="LightZero">
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -74,28 +71,25 @@
                 <div class="card-body">
                     <form>
                         <div class="row gx-3 mb-3">
-
-                            <div class="col-md-6 mb-3">
-                                <label class="small mb-1" for="inputBirthday">Születési dátum:</label>
-                                <input class="form-control  " id="inputBirthday" type="text" name="birthday" placeholder="Add meg a születési dátumod" value="01/02/2023" >
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">Keresztnév:</label>
+                                <input class="form-control" id="inputFirstName" type="text" placeholder="Add meg a keresztneved" value="Zétény" >
+                                 &nbsp&nbsp
+                                <label class="small mb-1" for="inputLastName">Vezetéknév:</label>
+                                <input class="form-control" id="inputLastName" type="text" placeholder="Add meg a vezetékneved" value="Kőrösi" >
                             </div>
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputEmailAddress">Email cím:</label>
-                                <input class="form-control" id="inputEmailAddress" type="email" size="30" placeholder="Add meg az Email címed" value="korosi.zeteny@bolyai-zenta.edu.rs">
+                            <div class="col-md-6">
+
                             </div>
                         </div>
                         <div class="row gx-3 mb-3">
-
-                            <div class="col-md-6 mb-3">
-                                <label class="small mb-1" for="inputpassword">Jelszó:</label>
-                                <input class="form-control" id="inputpassword" type="password" name="password" placeholder="add meg a jelszavad" value="Paco">
-                                &nbsp&nbsp&nbsp
-                                <input type="checkbox" onclick=""> Jelszó megjelenítése
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Telefonszám:</label>
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="Add meg a telefonszámod" value="06452326514" >
                             </div>
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputnewpassword">Új jelszó:</label>
-                                <input class="form-control"  id="inputnewpassword" type="password" placeholder="add meg új jelszavad" value="poco">
-                                <input type="checkbox" onclick=" "> Jelszó megjelenítése
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Lokáció:</label>
+                                <input class="form-control" id="inputLocation" type="text" placeholder="Add meg a lokációd" value="Zenta/Szerbia">
                             </div>
                         </div>
 
