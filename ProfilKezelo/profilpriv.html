@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
     <style>
-
+        .custom-background {
+            position: relative;
+        }
+        .custom-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("pictures/library-of-alexandria-cover.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            filter: blur(4px) grayscale(100%);
+            z-index: -1;
+        }
     </style>
 </head>
 <body class="flex">
