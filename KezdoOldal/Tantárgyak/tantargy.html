@@ -23,21 +23,42 @@
             filter: blur(4px) grayscale(100%);
             z-index: -1;
         }
-    </style>
-    <!--<script>
-        function openPage(pageName,elmnt) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
+        #chat-messages {
+            max-height: calc(100% - 40px);
+            overflow-y: auto;
         }
-        document.getElementById("defaultOpen").click();
-    </script>-->
+
+        #fő {
+            height: 100vh;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .user-message {
+            text-align: right;
+            color: #2196F3;
+        }
+
+        .bot-message {
+            text-align: left;
+            color: #4CAF50;
+        }
+        #user-input {
+            margin-top: 10px;
+            padding: 5px;
+            width: 100%;
+            color: black;
+        }
+
+        #send-button {
+            margin-top: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="flex">
 <div class="flex flex-col items-center w-56 min-h-screen overflow-hidden text-gray-400 bg-gray-900 rounded">
@@ -56,11 +77,12 @@
             </a>
         </div>
         <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
-            <a class="flex items-center w-full h-12 px-3 mt-2 rounded bg-gray-700" href="#">
+            <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300 rounded" href="../Tantárgyak/index.html">
                 <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
                 <span class="ml-2 text-sm font-medium">Tantárgyak</span>
+            </a>
             </a>
             <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300 rounded" href="../Beszelgetesek/index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -93,32 +115,30 @@
 </div>
 <div class="flex-1 custom-background text-white p-4">
     <div class="flex items-center justify-center">
-        <div class="text-center inline-block border border-gray-200 p-4 rounded-md bg-gray-700">
-            <h1 class="text-2xl font-bold mb-4 h-2">Tantárgyak</h1>
+        <div id="fő" class="text-center w-full inline-block border border-gray-200 p-4 rounded-md bg-gray-700">
+            <div id="chat-messages"></div>
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-button" onclick="sendMessage()">Send</button>
         </div>
-    </div>
-    <div class="flex-1 custom-background text-white p-4">
-        <div id="defaultOpen" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            <a href="#matematika" onclick="openPage('matematika', this)" class="block p-6 border border-gray-300 rounded-md shadow-md bg-gray-200 bg-opacity-75 hover:bg-opacity-100">
-                <div class="h-24 mb-4 rounded-md">
-                    <img src="../Pictures/Matek.png" alt="." class="w-full h-full">
-                </div>
-                <div class="font-semibold text-lg">Matematika</div>
-                <div class="text-gray-500">Tanárok: Pistike</div>
-            </a>
-            <a href="#programozas" onclick="openPage('matematika', this)" class="block p-6 border border-gray-300 rounded-md shadow-md bg-gray-200 bg-opacity-75 hover:bg-opacity-100">
-                <div class="h-24 mb-4 rounded-md">
-                    <img src="../Pictures/Progi.png" alt="." class="w-full h-full">
-                </div>
-                <div class="font-semibold text-lg">Programozás</div>
-                <div class="text-gray-500">Tanárok: Tyúkanyó</div>
-            </a>
-        </div>
-        <!--<div id="Matematika" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            <h3>Contact</h3>
-            <p>Get in touch, or swing by for a cup of coffee.</p>
-        </div>-->
     </div>
 </div>
+<script>
+    function sendMessage() {
+        var userInput = document.getElementById("user-input").value;
+        var chatMessages = document.getElementById("chat-messages");
+
+        // Display user message
+        chatMessages.innerHTML += `<div class="user-message">Me: ${userInput}</div>`;
+        setTimeout(function () {
+            chatMessages.innerHTML += `<div class="bot-message">Bot: Hello! This is a bot response.</div>`;
+        }, 1000);
+
+        // Clear the user input field
+        document.getElementById("user-input").value = "";
+
+        // Scroll to the bottom of the chat messages
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+</script>
 </body>
 </html>
