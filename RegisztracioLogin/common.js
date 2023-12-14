@@ -9,13 +9,14 @@ signUpButton.addEventListener('click', () => {
 
 signInButton.addEventListener('click', () => {
     container.classList.remove("right-panel-active");
+    function changeTitleReg() {
+        document.title = "Sacle - Regisztráció";
+    }
+    function changeTitleLog() {
+        document.title = "Sacle - Bejelentkezés";
+    }
 });
-function changeTitleReg() {
-    document.title = "Sacle - Regisztráció";
-}
-function changeTitleLog() {
-    document.title = "Sacle - Bejelentkezés";
-}
+
 pwShowHide.forEach((icon) => {
     icon.addEventListener("click", () => {
         let getPwInput = icon.parentElement.querySelector("input");
