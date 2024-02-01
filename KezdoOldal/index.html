@@ -26,14 +26,7 @@
     </style>
 </head>
 <body class="flex">
-<script>
-    fetch('../Components/MenuSor.html')
-        .then(function(res){return res.text();})
-        .then((menu)=>{
-            console.log(menu);
-            document.getElementById('Navigation').innerHTML = menu;
-        })
-</script>
+<script src="/Components/MenuSorJS.js"></script>
 <div id="Navigation">
 </div>
 <div class="flex-1 custom-background text-white p-4">

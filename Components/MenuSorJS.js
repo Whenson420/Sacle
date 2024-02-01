@@ -1,4 +1,4 @@
-fetch('../Components/MenuSor.html')
+fetch('/Components/MenuSor.html')
     .then(function(res){return res.text();})
     .then((menu)=>{
         console.log(menu);
