@@ -89,7 +89,7 @@
     </div>
 </div>
 <div id="settings_bg">
-    <div id="settings">
+    <div id="settings" class="flex">
         <div class="flex flex-col items-center w-56 overflow-hidden text-gray-400 bg-gray-900 rounded" style="height: 100%">
             <a class="flex items-center justify-center w-full px-3 mt-3">
                 <svg class="w-6 h-6 text-red-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -99,7 +99,7 @@
             </a>
             <div class="w-full px-2">
                 <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700 hover:bg-gray-700">
-                    <span class="ml-2 text-sm font-medium">Általános</span>
+                    <span onclick="general()" class="ml-2 text-sm font-medium">Általános</span>
                 </div>
                 <div class="flex flex-col items-center w-full mt-3 hover:bg-gray-700">
                     <span class="ml-2 text-sm font-medium">Kinézet</span>
@@ -119,12 +119,20 @@
                 X
             </p>
         </div>
-        <p id="titleGeneral" >
-            Általános
-        </p>
-        <p id="descriptionGeneral" >
-            AAAAAAAAAAAAAAA
-        </p>
+        <div class="flex flex-col items-center w-3/4">
+            <div id="titleGeneral" style="display: none">
+                Általános
+            </div>
+            <div id="descriptionGeneral" style="display: none">
+                <!-- https://webdesign.tutsplus.com/color-schemes-with-css-variables-and-javascript--cms-36989t -->
+                Szín összeállítás:
+                <select name="theme-select" id="theme-select">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+            </div>
+        </div>
+
     </div>
 </div>
 <script src="/Components/settings.js"></script>
