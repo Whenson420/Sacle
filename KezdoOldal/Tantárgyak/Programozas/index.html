@@ -174,6 +174,8 @@
 </head>
 <body class="flex">
 <script src="/Components/MenuSorJS.js"></script>
+<script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script defer src="script.js"></script>
 <div id="Navigation"></div>
 <div class="flex-1 custom-background text-white p-4">
     <div class="flex items-center justify-center">
@@ -195,9 +197,9 @@
                                 src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
                                 alt=""
                         />
-                        <input type="text" placeholder="..." />
+                        <input type="text" id="message-input" placeholder="..." />
                     </div>
-                    <button class="tweetBox__tweetButton">Küldés</button>
+                    <button class="tweetBox__tweetButton" id="send-button">Küldés</button>
                 </form>
             </div>
             <!-- tweetbox ends -->

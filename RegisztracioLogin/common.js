@@ -31,3 +31,11 @@ pwShowHide.forEach((icon) => {
 });
 document.getElementById("redirectButton").addEventListener("click", redirect);
 function redirect(){ window.location.href = "../KezdoOldal/index.html"; }
+
+
+
+function validateEmail(email) {
+    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if(!emailRegex.test(email))
+        alert("Helytelen az email!");
+}
