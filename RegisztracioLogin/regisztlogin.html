@@ -16,7 +16,7 @@
                 <h1>Regisztrálás</h1>
                 <br>
                 <div class="input_box">
-                    <input type="email" placeholder="Email" required />
+                    <input id="email" type="email" placeholder="Email" required/>
                     <i class="uil uil-envelope-alt email"></i>
                 </div>
                 <div class="input_box">
@@ -30,7 +30,7 @@
                     <i class="uil uil-lock password"></i>
                 </div>
                 <br>
-                <button>Regisztrálás</button>
+                <button onclick="validateEmail(document.getElementById('email').value)">Regisztrálás</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
