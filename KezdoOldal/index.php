@@ -82,7 +82,23 @@
     <div class="flex items-center justify-center">
         <div class="text-center">
             <div class="text-center inline-block border border-gray-200 p-4 rounded-md bg-gray-700">
-                <h1 class="text-2xl font-bold mb-4">Hírek</h1>
+                <h1 class="text-2xl font-bold mb-4">Üdvözöllek <?php
+                if(isset($_COOKIE["userdata"])) {
+                    // Retrieve the JSON string from the cookie
+                    $userDataJSON = $_COOKIE["userdata"];
+
+                    // Decode the JSON string to an associative array
+                    $userData = json_decode($userDataJSON, true);
+
+                    // Access the username from the array
+                    $username = $userData['username'];
+
+                    // Output the username
+                    echo $username;
+                } else {
+                    echo "Felhasználó"; // Default text if cookie is not set
+                }
+            ?></h1>
             </div>
             <div class="max-w-screen-xl mx-auto p-4">
                 <div class="flex flex-col md:flex-row -mx-1.5 p-4">
@@ -151,7 +167,7 @@
         </div>
     </div>
 </div>
-<div id="settings_bg">
+<!--<div id="settings_bg">
     <div id="settings" class="flex">
         <div class="flex flex-col items-center w-56 overflow-hidden text-gray-400 bg-gray-900 rounded" style="height: 100%">
             <a class="flex items-center justify-center w-full px-3 mt-3">
@@ -187,7 +203,7 @@
                 Általános
             </div>
             <div id="descriptionGeneral" style="display: none">
-                <!-- https://webdesign.tutsplus.com/color-schemes-with-css-variables-and-javascript--cms-36989t -->
+                !!!!!!!!!!!!!!!!!!!note https://webdesign.tutsplus.com/color-schemes-with-css-variables-and-javascript--cms-36989t
                 Szín összeállítás:
                 <select name="theme-select" id="theme-select">
                 <option value="light">Light</option>
@@ -197,7 +213,7 @@
         </div>
 
     </div>
-</div>
+</div>-->
 <script src="/Components/settings.js"></script>
 </body>
 </html>

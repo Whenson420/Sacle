@@ -9,13 +9,14 @@ signUpButton.addEventListener('click', () => {
 
 signInButton.addEventListener('click', () => {
     container.classList.remove("right-panel-active");
-    function changeTitleReg() {
-        document.title = "Sacle - Regisztráció";
-    }
-    function changeTitleLog() {
-        document.title = "Sacle - Bejelentkezés";
-    }
 });
+
+function changeTitleReg() {
+    document.title = "Sacle - Regisztráció";
+}
+function changeTitleLog() {
+    document.title = "Sacle - Bejelentkezés";
+}
 
 pwShowHide.forEach((icon) => {
     icon.addEventListener("click", () => {
@@ -32,10 +33,35 @@ pwShowHide.forEach((icon) => {
 document.getElementById("redirectButton").addEventListener("click", redirect);
 function redirect(){ window.location.href = "../KezdoOldal/index.html"; }
 
-
-
 function validateEmail(email) {
     var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if(!emailRegex.test(email))
         alert("Helytelen az email!");
+}
+// Function to make the Axios POST request
+function createUser(Uid, Mail) {
+    // Define the URL with the placeholder for {WEAVY-SERVER}
+    const url = "https://{WEAVY-SERVER}/api/users";
+
+    // Set up the headers with the authorization token
+    const headers = {
+        "Authorization": "Bearer {API-KEY}",
+        "Content-Type": "application/json"
+    };
+
+    // Construct the JSON payload
+    const data = {
+        uid: Uid,
+        name: email.substring(0, email.indexOf("@")),
+        email: Mail,
+    };
+
+    // Send a POST request with Axios
+    axios.post(url, data, { headers })
+        .then(response => {
+            console.log("User created successfully");
+        })
+        .catch(error => {
+            console.error("Error:", error.response.status);
+        });
 }

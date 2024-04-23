@@ -12,15 +12,19 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form action="dbPage.php" method="post">
                 <h1>Regisztrálás</h1>
                 <br>
                 <div class="input_box">
-                    <input id="email" type="email" placeholder="Email" required/>
+                    <input name="username" id="username" type="text" placeholder="Username" required/>
+                    <i class="uil uil-person-alt"></i>
+                </div>
+                <div class="input_box">
+                    <input name="email" id="email" type="email" placeholder="Email" required/>
                     <i class="uil uil-envelope-alt email"></i>
                 </div>
                 <div class="input_box">
-                    <input type="password" placeholder="Jelszó" required />
+                    <input name="password" type="password" placeholder="Jelszó" required />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw_hide"></i>
                 </div>
@@ -34,15 +38,15 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="dbPage.php" method="post">
                 <h1>Bejelentkezés</h1>
                 <br>
                 <div class="input_box">
-                    <input type="text" placeholder="Email" required />
+                    <input name="email" type="text" placeholder="Email" required />
                     <i class="uil uil-envelope-alt email"></i>
                 </div>
                 <div class="input_box">
-                    <input type="password" placeholder="Jelszó" required />
+                    <input name="password" type="password" placeholder="Jelszó" required />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw_hide"></i>
                 </div>
@@ -63,6 +67,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="common.js"></script>
 </body>
 </html>
