@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Sacle - Beszélgetések</title>
+    <title>Sacle - Tantárgy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
     <style>
@@ -30,7 +30,7 @@
 
         #fő {
             height: 100vh;
-            max-width: 1200px;
+            max-width: 600px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -58,65 +58,11 @@
             padding: 5px;
             cursor: pointer;
         }
-        .modal-content {
-            background: #ccc;
-            width: 500px;
-            padding: 20px;
-            border-radius: 10px;
-            z-index: 99;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 16px;
-            color: #000;
-            font-size: 30px;
-        }
-
-        .close-modal {
-            background: transparent;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 20px;
-            width: 20px;
-            font-size: 40px;
-
-        }
-
-        .close-modal:hover {
-            color: #fa5252;
-        }
-
-        .modal-body p {
-            font-size: 22px;
-            line-height: 1.5;
-        }
-
-        .hidden-modal {
-            display: none;
-        }
-
-        .blur-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px);
-        }
-
-        .hidden-blur {
-            display: none;
-        }
     </style>
 </head>
 <body class="flex">
 <div class="flex flex-col items-center w-56 min-h-screen overflow-hidden text-gray-400 bg-gray-900 rounded">
-    <a href="../index.php" class="flex items-center justify-center w-full px-3 mt-3">
+    <a class="flex items-center justify-center w-full px-3 mt-3" href="../index.php">
         <svg class="h-8 w-8 text-red-600"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"/>
             <path d="M18 15a6 6 0 1 1 -10.853 -3.529c1.926-2.338 4.763-3.327 3.848-8.47 2.355 1.761 5.84 5.38 2.022 9.406-1.136 1.091-.244 2.767 1.221 2.593.882-.105 2.023-.966 3.23-2.3.532.68.532 1.717.532 2.3z" />
@@ -131,13 +77,14 @@
             </a>
         </div>
         <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
-            <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300 rounded" href="../Tantárgyak/tantargy.html">
+            <a class="flex items-center w-full h-12 px-3 mt-2 rounded bg-gray-700" href="#">
                 <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
                 <span class="ml-2 text-sm font-medium">Tantárgyak</span>
             </a>
-            <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300 rounded" href="#">
+            </a>
+            <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300 rounded" href="../Beszelgetesek/index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
                 </svg>
@@ -150,7 +97,7 @@
                 <span class="ml-2 text-sm font-medium">Fileok</span>
             </a>
         </div>
-        <div id="SettingButton" onclick="openSettings()" class="flex flex-col items-center w-full mt-2 border-t border-gray-700">
+        <div class="flex flex-col items-center w-full mt-2 border-t border-gray-700">
             <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
                 <svg class="w-6 h-6 stroke-current"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
@@ -166,29 +113,13 @@
         <span class="ml-2 text-sm font-medium">Profil</span>
     </a>
 </div>
-<div id="Navigation">
-</div>
 <div class="flex-1 custom-background text-white p-4">
     <div class="flex items-center justify-center">
         <div id="fő" class="text-center w-full inline-block border border-gray-200 p-4 rounded-md bg-gray-700">
-            <wy-messenger></wy-messenger>
+            <wy-files uid="demofiles"></wy-files>
         </div>
     </div>
 </div>
-<!-- Setting -->
-<div class="modal-content hidden-modal">
-    <div class="modal-header">
-        <h3>Meaning of Hello!</h3>
-        <button class="close-modal">&times;</button>
-    </div>
-    <div class="modal-body">
-        <p>Hello is a greeting in the English language. It is used at the start of a sentence as an introduction whether in person or on phone.</p>
-    </div>
-</div>
-<div class="blur-bg hidden-blur"></div>
-
-
-<script type="application/javascript" src="/Components/MenuSorJS.js"></script>
 <script src="https://205993b7ccda4c7c932fe8f6ed772d43.weavy.io/uikit-web/weavy.js"></script>
 <script>
     const weavy = new Weavy();

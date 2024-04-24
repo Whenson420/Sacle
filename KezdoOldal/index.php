@@ -5,7 +5,7 @@
     <title>Sacle - Kezdőlap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
-    <link rel="stylesheet" href="/Components/settings.css">
+    <link rel="stylesheet" href="../Components/settings.css">
     <style>
         .custom-background {
             position: relative;
@@ -55,7 +55,7 @@
                 </svg>
                 <span class="ml-2 text-sm font-medium">Beszélgetések</span>
             </a>
-            <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
+            <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="Fileok/index.html">
                 <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
                 </svg>
@@ -167,7 +167,7 @@
         </div>
     </div>
 </div>
-<!--<div id="settings_bg">
+<div id="settings_bg">
     <div id="settings" class="flex">
         <div class="flex flex-col items-center w-56 overflow-hidden text-gray-400 bg-gray-900 rounded" style="height: 100%">
             <a class="flex items-center justify-center w-full px-3 mt-3">
@@ -203,7 +203,7 @@
                 Általános
             </div>
             <div id="descriptionGeneral" style="display: none">
-                !!!!!!!!!!!!!!!!!!!note https://webdesign.tutsplus.com/color-schemes-with-css-variables-and-javascript--cms-36989t
+                <!--https://webdesign.tutsplus.com/color-schemes-with-css-variables-and-javascript--cms-36989t-->
                 Szín összeállítás:
                 <select name="theme-select" id="theme-select">
                 <option value="light">Light</option>
@@ -213,7 +213,7 @@
         </div>
 
     </div>
-</div>-->
-<script src="/Components/settings.js"></script>
+</div>
+<script src="../Components/settings.js"></script>
 </body>
 </html>
