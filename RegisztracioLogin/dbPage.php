@@ -15,7 +15,6 @@ if(empty($username)){
     $stmt->execute();
     $stmt->store_result();
     $row_count = $stmt->num_rows;
-
     if ($row_count > 0) {
         $stmt->bind_result($fetched_username);
         $stmt->fetch();
@@ -48,10 +47,8 @@ else{
             'username' => $username,
             'email' => $email,
         );
-    
         $userDataJSON = json_encode($userData);
         setcookie("userdata", $userDataJSON, time() + (86400 * 30), "/");
-    
         $sql = "INSERT INTO felhasznalo (username, email, password, felhasznaloTipusId) VALUES (?, ?, ?, 1)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sss", $username, $email, $password);
@@ -86,5 +83,5 @@ else{
         curl_close($ch);*/
     }
 }
-header("Location:http://localhost/New%20folder/Sacle/KezdoOldal/");
+//header("Location:http://localhost/New%20folder/Sacle/KezdoOldal/");
 ?>

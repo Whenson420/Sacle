@@ -24,17 +24,17 @@
                     <i class="uil uil-envelope-alt email"></i>
                 </div>
                 <div class="input_box">
-                    <input name="password" type="password" placeholder="Jelszó" required />
+                    <input id="Pw" name="password" type="password" placeholder="Jelszó" required />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw_hide"></i>
                 </div>
                 <div class="input_box">
-                    <input type="password" placeholder="Jelszó megerősítése" required />
+                    <input id="confirmPw" type="password" placeholder="Jelszó megerősítése" required />
                     <i class="uil uil-eye-slash pw_hide"></i>
                     <i class="uil uil-lock password"></i>
                 </div>
                 <br>
-                <button onclick="validateEmail(document.getElementById('email').value)">Regisztrálás</button>
+                <button onclick="validate(document.getElementById('email').value,document.getElementById('Pw').value,document.getElementById('confirmPw').value)">Regisztrálás</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
