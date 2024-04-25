@@ -30,7 +30,7 @@ content: '';
 <body class="flex">
 
 <div class="flex flex-col items-center w-56 min-h-screen overflow-hidden text-gray-400 bg-gray-900 rounded">
-    <a class="flex items-center justify-center w-full px-3 mt-3" href="../KezdoOldal/index.html">
+    <a class="flex items-center justify-center w-full px-3 mt-3" href="../KezdoOldal/index.php">
         <svg class="h-8 w-8 text-red-600"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"/>
             <path d="M18 15a6 6 0 1 1 -10.853 -3.529c1.926-2.338 4.763-3.327 3.848-8.47 2.355 1.761 5.84 5.38 2.022 9.406-1.136 1.091-.244 2.767 1.221 2.593.882-.105 2.023-.966 3.23-2.3.532.68.532 1.717.532 2.3z" />
@@ -109,19 +109,8 @@ content: '';
         // Close prepared statement and database connection
         $stmt_check->close();
         $conn->close();
-        print_r($user_data);
         $csvFilePath = 'data.csv';
         $data = array($user_data);
-
-
-        $file = fopen($csvFilePath, 'w');
-
-        foreach ($data as $row) {
-            fputcsv($file, $row);
-        }
-
-        fclose($file);
-       // echo "document.getElementById('id').value=;".;
     } else {
         // If email doesn't exist, output a message
         echo "Az email cím nem található az adatbázisban.";
@@ -139,7 +128,7 @@ content: '';
                             <img class="img-account-profile rounded-circle mb-4" src="pictures/profil.png" alt="" style="width: 25%; height: 25%;">
                             <div class="mb-3 " style="font-size: 20px;padding-left: 20px ; ">
                                 <label class="small mb-1" for="inputUsername" style="">Felhasználónév:</label>
-                                <input class="form-control text-black text-black border border-black " id="inputUsername" type="text" size="30" placeholder="Add meg a felhasználó neved" Value="LightZero">
+                                <input class="form-control text-black text-black border border-black " id="inputUsername" type="text" size="30" placeholder="Add meg a felhasználó neved" Value="<?php echo $user_data['username'] ?>">
                             </div>
                         </div>
                     </div>
@@ -154,24 +143,24 @@ content: '';
 
                                     <div class="col-md-6 mb-3">
                                         <label class="small mb-1" for="inputBirthday">Születési dátum:</label>
-                                        <input class="form-control text-black text-black border border-black" id="inputBirthday" type="text" name="birthday" placeholder="Add meg a születési dátumod" value="01/02/2023" >
+                                        <input class="form-control text-black text-black border border-black" id="inputBirthday" type="text" name="birthday" placeholder="Add meg a születési dátumod" value="" >
                                     </div>
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputEmailAddress">Email cím:</label>
-                                        <input class="form-control text-black text-black border border-black " id="inputEmailAddress" type="email" size="30" placeholder="Add meg az Email címed" value="korosi.zeteny@bolyai-zenta.edu.rs">
+                                        <input class="form-control text-black text-black border border-black " id="inputEmailAddress" type="email" size="30" placeholder="Add meg az Email címed" value="<?php echo $user_data['email'] ?>">
                                     </div>
                                 </div>
                                 <div class="row gx-3 mb-3">
 
                                     <div class="col-md-6 mb-3">
                                         <label class="small mb-1" for="inputpassword">Jelszó:</label>
-                                        <input class="form-control text-black text-black border border-black " id="inputpassword" type="password" name="password" placeholder="add meg a jelszavad" value="Paco">
+                                        <input class="form-control text-black text-black border border-black " id="inputpassword" type="password" name="password" placeholder="add meg a jelszavad" value="<?php echo $user_data['password'] ?>">
                                         &nbsp&nbsp&nbsp
     <input type="checkbox" onclick="pwShown()"> Jelszó megjelenítése
 </div>
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputnewpassword">Új jelszó:</label>
-                                        <input class="form-control text-black text-black border border-black "  id="inputnewpassword" type="password" placeholder="add meg új jelszavad" value="poco">
+                                        <input class="form-control text-black text-black border border-black "  id="inputnewpassword" type="password" placeholder="add meg új jelszavad" value="">
                                         <input type="checkbox" onclick="pwShow()"> Jelszó megjelenítése
 </div>
                                 </div>
